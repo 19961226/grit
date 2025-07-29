@@ -1,14 +1,32 @@
+// horizontascroll 横スクロール
+const scrollElement = document.querySelector("#horizontal-scroll");
+
+scrollElement.addEventListener("wheel", (e) => {
+  if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+
+  const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+
+  if (
+    (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+    (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+  )
+    return;
+
+  e.preventDefault();
+  scrollElement.scrollLeft += e.deltaY;
+});
+
 /* Drawer */
-jQuery(".c-drawer-btn").on("click", function () {
-  jQuery(".c-drawer-btn").toggleClass("open");
-  $('.l-header-sp__menu').toggleClass('open');
+jQuery(".drawer-btn").on("click", function () {
+  jQuery(".drawer-btn").toggleClass("open");
+  $('.header-sp__menu').toggleClass('open');
 });
 
 jQuery(window).on("scroll", function ($) {
   if (100 < jQuery(this).scrollTop()) {
-    jQuery("#js-to-top-button").show();
+    jQuery("#js-to-tobutton").show();
   } else {
-    jQuery("#js-to-top-button").hide();
+    jQuery("#js-to-tobutton").hide();
   }
 });
 
@@ -31,28 +49,33 @@ jQuery('a[href^="#"]').click(function () {
   return false;
 });
 
-jQuery(window).on("scroll", function ($) {
-  if (100 < jQuery(this).scrollTop()) {
-    jQuery("body").addClass("is-footer-sns-fixed");
-  } else {
-    jQuery("body").removeClass("is-footer-sns-fixed");
-  }
+
+// usageの横スクロール
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    type: "fraction",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
 });
 
-const scrollElement = document.querySelector("#horizontal-scroll");
 
-scrollElement.addEventListener("wheel", (e) => {
-  if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
 
-  const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
 
-  if (
-    (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-    (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-  )
-    return;
 
-  e.preventDefault();
-  scrollElement.scrollLeft += e.deltaY;
-});
 
