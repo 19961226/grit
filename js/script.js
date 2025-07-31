@@ -1,3 +1,56 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const fill = document.getElementById("progress-bar-fill");
+  const text = document.getElementById("loading-text");
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+
+  let startTime = null;
+  const duration = 3000; // 3秒で100%まで進む
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+
+    let progress = Math.min(elapsed / duration, 1); // 0〜1にクランプ
+    fill.style.width = (progress * 100) + "%";
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      // 完了時の処理
+      fill.style.backgroundColor = "#00ff00"; // 緑
+      text.textContent = "COMPLETE";
+      text.style.color = "#00ff00";
+
+      setTimeout(() => {
+        loadingScreen.style.opacity = 0;
+        setTimeout(() => {
+          loadingScreen.style.display = "none";
+          mainContent.style.display = "block";
+        }, 1000);
+      }, 800);
+    }
+  }
+
+  requestAnimationFrame(animate);
+});
+
+// スクロールでフェードイン
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  fadeElements.forEach(el => observer.observe(el));
+});
+
+
 // horizontascroll 横スクロール
   const scrollElement = document.querySelector("#horizontal-scroll");
 
