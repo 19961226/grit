@@ -2,29 +2,27 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta httequiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initiascale=1.0" />
-    <title>Metalife</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <title>Metalife</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 	  <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-
+    <div id="top"></div>
     <!-- header -->
     <header id="header">
       <div class="inner">
         <!-- pc -->
-        <nav class="header-pc">
+        <div class="header-pc">
           <div class="header-pc__logo">
-            <a href="#top"><img src="./img/logo_1.png" alt="" /></a>
+            <a href="#top"><img src="./img/logo-img.png" alt="" /></a>
           </div>
-          <div class="header-pc__menu">
+          <nav class="header-pc__menu">
             <ul>
               <li class="menu-btn">
                 <a href="#about" class="menu-btn__default">About MetaLife</a>
@@ -47,20 +45,20 @@
                 >参加する</a
               >
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
 
         <!-- sp -->
-        <nav class="header-sp">
+        <div class="header-sp">
           <div class="header-sp__logo">
-            <a href="#top"><img src="./img/logo_1.png" alt="" /></a>
+            <a href="#top"><img src="./img/logo-img.png" alt="" /></a>
           </div>
           <div class="drawer-btn">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="header-sp__menu">
+          <nav class="header-sp__menu">
             <ul>
               <li class="menu-btn">
                 <a href="#about">About MetaLife</a>
@@ -72,25 +70,25 @@
                 <a href="#usage">Usage Scene</a>
               </li>
             </ul>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <div id="horizontal-scroll">
+    <div id="horizontal-scroll" class="scroll-container">
 
-    <!-- mainvisiual -->
+    <!-- mainvisual -->
     <section id="mainvisual">
       <div class="content">
         <div class="inner">
           <div class="container">
             <div class="left">
               <div class="text">
-                <h2>いつもの場所を、いつもの気軽さで。</h2>
+                <h2>いつもの場所を、<br>いつもの気軽さで。</h2>
               </div>
               <div class="video">
                 <video class="bg-video" autoplay muted playsinline loop>
-                  <source src="./img/MetaLife.mov" type="video/mp4" />
+                  <source src="./img/MetaLife.mp4" type="video/mp4" />
                   お使いのブラウザでは動画を再生できません。
                 </video>
               </div>
@@ -100,9 +98,13 @@
                 <img src="./img/top-img_1.png" alt="">
               </div>
             </div>
+            <div class="guide">
+              <span>Scroll</span>
+            </div>
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- about -->
@@ -116,7 +118,7 @@
                 <p class="sub-title">MetaLifeについて</p>
               </div>
               <div class="description">
-                <h3 class="description-title">「在籍」から「実感」へ。<br>つながるコミュニティ。</h3>
+                <h3 class="description-title">「在籍」から「実感」へ。つながるコミュニティ。</h3>
                 <p class="description-text">MetaLifeは、まるでリアルのように<br>気軽に集えるバーチャルスペースを提供する<br>コミュニケーションプラットフォームです。</p>
               </div>
             </div>
@@ -127,11 +129,12 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
+
     </section>
 
     <!-- Value -->
-    <section id="value">
+    <section class="value">
       <div class="content">
         <div class="inner">
           <div class="container">
@@ -147,7 +150,12 @@
             </div>
             <div class="right">
               <div class="image">
-                <img src="./img/value-image1.png" alt="About Image" />
+                <div class="image-pc">
+                  <img src="./img/value-img_pc.png" alt="" />
+                </div>
+                <div class="image-sp">
+                  <img src="./img/value-img_sp.png" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -206,6 +214,17 @@
                 <p class="sub-title">活用シーン</p>
               </div>
             </div>
+
+            <div class="top-loop-wrap">
+              <div class="top-loop-area">
+                <div class="top-scrollText">
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                </div>
+              </div>
+            </div>
+
             <div class="right">
               <!-- Slider main container -->
               <div class="swiper">
@@ -255,19 +274,26 @@
                 </div>
                 <!-- If we need pagination -->
                   <div class="swiper-pagination"></div>
-
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
               </div>
-
               <div class="usage-btn">
                 <p>View All</p>
                 <a href="./usage.html" class="view-btn"><img src="./img/Arrow right-circle.png" alt=""></a>
               </div>
-
             </div>
+
+            <div class="end-loop-wrap">
+              <div class="end-loop-area">
+                <div class="end-scrollText">
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                  <span>USAGE SCENE&nbsp;&nbsp;USAGE SCENE&nbsp;&nbsp;</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -281,10 +307,25 @@
           <h2 class="footer-title">Join now</h2>
           <p class="footer-subtitle">ーメタリーフを体験するー</p>
           <a href="https://metalife.co.jp/" class="footer-btn">今すぐ始める</a>
-          <a href="#mainvisual" id="page_top" class="page_top_btn">
-            <p>Back to top</p>
-            <div class="arrow"></div>
-          </a>
+          <ul>
+            <li class="menu-btn">
+              <a href="#about" class="menu-btn__default">About MetaLife</a>
+              <a href="#about" class="menu-btn__hover">MetaLifeについて</a>
+            </li>
+            <li class="menu-btn">
+              <a href="#feature" class="menu-btn__default">Feature</a>
+              <a href="#feature" class="menu-btn__hover">機能紹介</a>
+            </li>
+            <li class="menu-btn">
+              <a href="#usage" class="menu-btn__default">Usage Scene</a>
+              <a href="#usage" class="menu-btn__hover">活用シーン</a>
+            </li>
+          </ul>
+          <div class="guide">
+            <a href="#mainvisual">
+              <span>Back to top</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -298,9 +339,8 @@
     <div class="bar"></div>
 
   </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ntegrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
   </body>
 </html>
