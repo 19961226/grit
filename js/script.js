@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     jQuery(".drawer-btn").toggleClass("open");
     $('.header-sp__menu').toggleClass('open');
   });
-  jQuery(".menu-btn").on("click", function () {
+  jQuery(".header-menu-btn").on("click", function () {
     jQuery(".drawer-btn").toggleClass("open");
     $('.header-sp__menu').toggleClass('open');
   });
