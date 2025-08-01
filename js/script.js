@@ -22,13 +22,41 @@ document.addEventListener("DOMContentLoaded", () => {
       text.textContent = "COMPLETE";
       text.style.color = "#00ff00";
 
-      setTimeout(() => {
-        loadingScreen.style.opacity = 0;
-        setTimeout(() => {
-          loadingScreen.style.display = "none";
-          mainContent.style.display = "block";
-        }, 1000);
-      }, 800);
+setTimeout(() => {
+  loadingScreen.style.opacity = 0;
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+    mainContent.style.display = "block";
+
+    // 🔽 ココに追加！
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        if (window.innerWidth <= 1100) {
+          window.scrollTo({
+            top: target.offsetTop,
+            behavior: "smooth"
+          });
+        } else {
+          const container = document.getElementById("horizontal-scroll");
+          const targetLeft = target.offsetLeft;
+          const containerLeft = container.offsetLeft;
+          const currentScroll = container.scrollLeft;
+
+          const scrollTo = targetLeft - containerLeft + currentScroll;
+
+          container.scrollTo({
+            left: scrollTo,
+            behavior: "smooth"
+          });
+        }
+      }
+    }
+
+  }, 1000);
+}, 800);
+
     }
   }
 
