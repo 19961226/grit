@@ -14,22 +14,23 @@
 //   });
 // });
 /* Drawer */
-  jQuery(".drawer-btn").on("click", function () {
-    jQuery(".drawer-btn").toggleClass("open");
-    $('.header-sp__menu').toggleClass('open');
-  });
-  jQuery(".menu-btn").on("click", function () {
-    jQuery(".drawer-btn").toggleClass("open");
-    $('.header-sp__menu').toggleClass('open');
-  });
+jQuery(".drawer-btn").on("click", function () {
+  jQuery(".drawer-btn").toggleClass("open");
+  $('.header-sp__menu').toggleClass('open');
+});
+jQuery(".header-menu-btn").on("click", function () {
+  jQuery(".drawer-btn").toggleClass("open");
+  $('.header-sp__menu').toggleClass('open');
+});
 
-  jQuery(window).on("scroll", function ($) {
-    if (100 < jQuery(this).scrollTop()) {
-      jQuery("#js-to-tobutton").show();
-    } else {
-      jQuery("#js-to-tobutton").hide();
-    }
-  });
+jQuery(window).on("scroll", function ($) {
+  if (100 < jQuery(this).scrollTop()) {
+    jQuery("#js-to-tobutton").show();
+  } else {
+    jQuery("#js-to-tobutton").hide();
+  }
+});
+
 
 // トップページリンク
 //スクロールした際の動きを関数でまとめる
