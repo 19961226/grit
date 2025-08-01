@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     jQuery(".drawer-btn").toggleClass("open");
     $('.header-sp__menu').toggleClass('open');
   });
+  jQuery(".menu-btn").on("click", function () {
+    jQuery(".drawer-btn").toggleClass("open");
+    $('.header-sp__menu').toggleClass('open');
+  });
 
   jQuery(window).on("scroll", function ($) {
     if (100 < jQuery(this).scrollTop()) {
@@ -91,28 +95,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 /* Smooth Scroll */
-  $(function () {
-    $('a[href^="#"]').click(function (e) {
-      e.preventDefault();
+  $('a[href^="#"]').click(function (e) {
+    const href = $(this).attr("href");
+    const $target = $(href);
 
-      const href = $(this).attr("href");
-      const $target = $(href);
+    if (!$target.length) return;
 
-      if ($target.length) {
-        const $container = $('#horizontal-scroll');
+    e.preventDefault();
 
-        // ★ 正確な左位置を求める：ページ全体からの距離 - コンテナの開始位置 + 現在のscrollLeft
-        const targetOffset = $target.offset().left;
-        const containerOffset = $container.offset().left;
-        const currentScroll = $container.scrollLeft();
+    if (window.innerWidth <= 1100) {
+      // ★ スマホ：縦スクロール
+      const scrollTo = $target.offset().top;
+      $('html, body').animate({
+        scrollTop: scrollTo
+      }, 600, 'swing');
 
-        const scrollTo = targetOffset - containerOffset + currentScroll;
+    } else {
+      // ★ PC：横スクロール
+      const $container = $('#horizontal-scroll');
+      const targetOffset = $target.offset().left;
+      const containerOffset = $container.offset().left;
+      const currentScroll = $container.scrollLeft();
 
-        $container.animate({
-          scrollLeft: scrollTo
-        }, 600, 'swing');
-      }
-    });
+      const scrollTo = targetOffset - containerOffset + currentScroll;
+
+      $container.animate({
+        scrollLeft: scrollTo
+      }, 600, 'swing');
+    }
   });
 
 // usageの横スクロール

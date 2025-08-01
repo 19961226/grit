@@ -79,7 +79,7 @@ li {
 #horizontal-scroll div {
   align-items: center;
   display: flex;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .inner {
@@ -301,6 +301,7 @@ li {
 }
 
 .footer-btn {
+  display: inline-block;
   font-size: 1rem;
   background: #5e2dff;
   border: 3px solid #5e2dff;
@@ -309,34 +310,26 @@ li {
   cursor: pointer;
   font-weight: bold;
   overflow: hidden;
-  padding: 20px;
+  padding: 20px 40px;
   position: relative;
   text-align: center;
   text-decoration: none;
-  width: auto;
   margin-bottom: 150px;
-  animation: bounceLoop 2s infinite;
-  transition: transform 0.3s ease;
-}
-
-.footer-btn {
-		  animation: bounceLoop 2s infinite;
-  transition: transform 0.3s ease;
+  animation: bounceLoop 1.8s ease infinite;
 }
 
 @keyframes bounceLoop {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   30% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
   50% {
     transform: translateY(0);
   }
   70% {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
   }
   90% {
     transform: translateY(0);
@@ -344,6 +337,7 @@ li {
 }
 
 .footer-btn:hover {
+  filter: brightness(1.1); /* 視覚的変化のみ、transformを避ける */
   background-color: #fff;
   border: 3px solid #5e2dff;
   color: #5e2dff;
@@ -390,6 +384,7 @@ li {
   display: none;
 }
 
+
 /* mainvisual */
 
 #mainvisual .left {
@@ -408,25 +403,6 @@ li {
   margin-right: auto;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-  margin-bottom: 20px;
-}
-
-.fade-in.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.delay-1 {
-  transition-delay: 0.3s;
-}
-.delay-2 {
-  transition-delay: 0.8s;
-}
-
 /* about */
 #about .content {
   background: #fff;
@@ -440,7 +416,7 @@ li {
 }
 
 #about .container {
-  gap: 200px;
+  gap: 50px;
 }
 
 #about .left {
@@ -465,7 +441,7 @@ li {
 }
 
 #about .image {
-  width: 600px;
+  width: 450px;
 }
 
 /* Value */
@@ -480,7 +456,8 @@ li {
   display: none;
 }
 .value .container {
-  gap: 200px;
+  gap: 50px;
+
 }
 
 .value .left {
@@ -495,8 +472,8 @@ li {
   color: #009944;
 }
 
-.value .image-pc {
-  width: 50%;
+.value .image {
+  width: 200px;
 }
 
 .value .image-sp {
@@ -505,11 +482,11 @@ li {
 
 /* feature */
 #feature .content {
-  width: 160vw;
+  width: 180vw;
 }
 
 #feature .container {
-  gap: 200px;
+  gap: 50px;
 }
 
 .feature-cards {
@@ -524,7 +501,7 @@ li {
   flex-direction: column;
   background-color: #fff;
   padding: 50px;
-  border-radius: 16px;
+  border-radius: 10%;
   text-align: center;
   width: 400px;
   height: 500px;
@@ -548,11 +525,11 @@ li {
 
 /* usage */
 #usage .content {
-  width: 130vw;
+    width: 180vw;
 }
 
 #usage .container {
-  gap: 80px;
+  gap: 50px;
 }
 
 #usage .right {
@@ -575,15 +552,15 @@ li {
 .slide-title {
   font-size: 1.8rem;
   color: #fff;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .slide-box {
   flex-direction: column;
   background: #fff;
   width: 80%;
-  height: 70%;
+  height: 75%;
   border-radius: 30px;
   padding: 20px;
   margin-bottom: 30px;
@@ -624,6 +601,8 @@ li {
 .usage-btn {
   font-size: 1.5rem;
   margin-left: auto;
+  position: relative;
+  top: -30px;
 }
 
 .view-btn:hover {
@@ -780,8 +759,85 @@ li {
   width: 100%;
 }
 
-/* メディアクエリ */
-@media (max-width: 1000px) {
+/* レスポンシブ */
+@media (min-width: 1400px) {
+  #feature .content {
+    width: 170vw;
+  }
+
+  #usage .content {
+    width: 170vw;
+  }
+    
+}
+
+@media (min-width: 1500px) {
+  #feature .content {
+    width: 160vw;
+  }
+
+  #usage .content {
+    width: 160vw;
+  }
+    
+}
+
+@media (min-width: 1600px) {
+  #feature .content {
+    width: 150vw;
+  }
+
+  #usage .content {
+    width: 150vw;
+  }
+    
+}
+
+@media (min-width: 1700px) {
+  #feature .content {
+    width: 140vw;
+  }
+
+  #usage .content {
+    width: 140vw;
+  }
+    
+}
+
+@media (min-width: 1800px) {
+  #feature .content {
+    width: 130vw;
+  }
+
+  #usage .content {
+    width: 130vw;
+  }
+    
+}
+
+@media (min-width: 1900px) {
+  #feature .content {
+    width: 120vw;
+  }
+
+  #usage .content {
+    width: 120vw;
+  }
+    
+}
+
+@media (min-width: 2000px) {
+  #feature .content {
+    width: 110vw;
+  }
+
+  #usage .content {
+    width: 110vw;
+  }
+    
+}
+
+@media (max-width: 1100px) {
   #horizontal-scroll {
     display: block; /* ← flexやrow方向を解除する */
     overflow-x: hidden;
@@ -802,9 +858,14 @@ li {
   }
 
   .title::after {
-    top: 15px;
-    left: -100px;
-    width: 75px;
+    top: 30%;
+    left: -30%;
+    width: 25%;
+  }
+
+  #feature .title::after {
+    left: -55%;
+    width: 45%;
   }
 
   /* header */
@@ -856,6 +917,8 @@ li {
   /* mainvisual */
   #mainvisual .container {
     flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 20px;
   }
 
   #mainvisual .left {
@@ -863,7 +926,7 @@ li {
   }
 
   #mainvisual .right {
-    display: none;
+    width: 100%;
   }
 
   #mainvisual .text {
@@ -932,6 +995,8 @@ li {
   #about .container {
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+
   }
 
   #about .left {
@@ -943,9 +1008,12 @@ li {
     gap: 20px;
     padding-left: 0;
   }
+
   #about .image {
-    width: 100%;
+    width: 300px;
   }
+  
+  
 
   /* Value */
   .value .content {
@@ -960,10 +1028,17 @@ li {
   .value .container {
     flex-direction: column;
     gap: 20px;
+    width: 100%;
   }
 
-  .value .inner {
-    flex-direction: column;
+  .value .left  {
+    width: 100%;
+  }
+
+  .value .right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .value .title {
@@ -976,7 +1051,12 @@ li {
 
   .value .image-sp {
     display: block !important;
-    width: 100%;
+  }
+  
+
+  .value .right .image {
+    width: 400px;
+    text-align: center;
   }
 
   /* feature */
@@ -1033,6 +1113,7 @@ li {
   .top-loop-wrap {
     left: 0px;
     height: auto;
+    width: 1100px;
   }
 
   .top-loop-area {
@@ -1042,6 +1123,7 @@ li {
   .top-scrollText {
     rotate: 0deg;
     writing-mode: unset;
+    font-size: 8rem;
   }
 
   .end-loop-wrap {
@@ -1050,10 +1132,10 @@ li {
 
   @keyframes loop-slide {
     from {
-      transform: translateX(0%);
+      transform: translateX(-30%);
     }
     to {
-      transform: translateX(30%);
+      transform: translateX(0%);
     }
   }
 
@@ -1092,15 +1174,13 @@ li {
   }
 
   .feature-card {
-    border-radius: 30px;
-    width: 353px;
-    height: 413px;
+    width: 300px;
+    height: 450px;
   }
 
   /* usage */
   .swiper {
     width: 375px;
-    height: 500px;
   }
 
   .slide-title {
@@ -1422,56 +1502,6 @@ li {
   font-size: 1rem;
 }
 
-/* join now */
-.join-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 600px;
-  background-color: #fff;
-}
-
-.join-section h2 {
-  font-size: 4rem;
-}
-
-.join-section p {
-  position: relative;
-  margin: 40px 0;
-  font-size: 1rem;
-}
-
-.join-section p::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: -10%;
-  width: 15px;
-  height: 1px;
-  background-color: #000;
-}
-
-.join-section p::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -10%;
-  width: 15px;
-  height: 1px;
-  background-color: #000;
-}
-
-.join-section .p-join-btn {
-  width: 200px;
-  height: 60px;
-  margin: 0;
-  font-size: 1.125rem;
-}
-
 /* ページトップリンク */
 #page-top a {
   display: flex;
@@ -1538,23 +1568,39 @@ li {
   }
 }
 
-/* footer */
-.p-footer {
-  height: 150px;
-  background-color: #fff;
-}
-
-.p-footer ul {
-  font-size: 1rem;
+/* usage-footer */
+#usage-footer .content {
+  background: #fff;
   display: flex;
-  flex-direction: row;
-  justify-content: center; /* 中央に並べる */
-  margin-right: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
-.p-footer ul li a {
-  margin-right: 20px;
-  color: #000;
+#usage-footer .inner {
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+#usage-footer .footer-title {
+  font-size: 5.6rem;
+  margin-bottom: 20px;
+}
+
+#usage-footer .footer-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+#usage-footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+#usage-footer .menu-btn {
+  margin-left: 0;
+
 }
 
 /* レスポンシブ */
@@ -1730,6 +1776,26 @@ li {
   .card h4 {
     margin-bottom: 20px;
   }
+
+    /* footer */
+    #usage-footer .footer-title {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+  
+    #usage-footer .footer-subtitle {
+      font-size: 1rem;
+      margin-bottom: 50px;
+    }
+  
+    #usage-footer  .menu-btn {
+      font-size: 1rem;
+    }
+  
+    #usage-footer #footer ul {
+      gap: 50px;
+    }
+  
 }
 
 @media screen and (max-width: 420px) {
@@ -1789,6 +1855,7 @@ li {
   }
 }
 
+/* ローディング */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -1819,3 +1886,50 @@ li {
     transform: translateY(-15px);
   }
 }
+
+/* フェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  margin-bottom: 20px;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.3s;
+}
+.delay-2 {
+  transition-delay: 0.8s;
+}
+
+@media screen and (max-width: 1100px) {
+  .fade-in {
+    transform: translateX(30px);
+  }
+
+  .value .fade-in {
+    transform: translateX(-30px);
+  }
+
+  .fade-in.active {
+    transform: translateX(0);
+  }
+  
+  #usage .fade-in {
+    transform: translateY(30px);
+  }
+
+  #usage .fade-in.active {
+    transform: translateY(0);
+  }
+
+
+  
+}
+
+
