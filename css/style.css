@@ -943,7 +943,7 @@ li {
     writing-mode: vertical-lr;
     position: absolute;
     left: 50px;
-    bottom: 100px;
+    bottom: 75px;
   }
   /* 線のアニメーション部分 */
   .guide::before {
@@ -980,8 +980,8 @@ li {
 
   /* about */
   #about .content {
-    border-top-left-radius: 150px;
-    border-top-right-radius: 150px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
     border-bottom-left-radius: 0px;
     height: auto;
     padding-top: 100px;
@@ -1012,13 +1012,11 @@ li {
   #about .image {
     width: 300px;
   }
-  
-  
 
   /* Value */
   .value .content {
-    border-bottom-left-radius: 150px;
-    border-bottom-right-radius: 150px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
     border-top-right-radius: 0px;
     height: auto;
     padding-top: 100px;
@@ -1189,7 +1187,7 @@ li {
 
   .slide-box {
     width: 60%;
-    height: 65%;
+    height: 70%;
   }
 
   .slide-box-title {
@@ -1206,7 +1204,7 @@ li {
 
   .footer-subtitle {
     font-size: 1rem;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
 
   #footer .menu-btn {
@@ -1746,6 +1744,10 @@ li {
     font-size: 0.8rem;
   }
 
+  #usage-footer ul {
+    gap: 40px;
+  }
+  
   .p-footer ul li a {
     font-size: 0.8rem;
   }
