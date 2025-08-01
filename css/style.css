@@ -75,6 +75,9 @@ li {
   overflow-x: auto;
   width: 100vw;
 }
+#horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
 
 #horizontal-scroll div {
   align-items: center;
@@ -515,6 +518,7 @@ li {
   justify-content: space-between;
   flex-wrap: nowrap;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
 .feature-card {
@@ -559,8 +563,8 @@ li {
 }
 
 .swiper {
-  width: 800px;
-  height: 650px;
+  width: 850px;
+  height: 550px;
 }
 
 .swiper-slide {
@@ -572,28 +576,30 @@ li {
 .slide-title {
   font-size: 1.8rem;
   color: #fff;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .slide-box {
   flex-direction: column;
   background: #fff;
   width: 80%;
-  height: 75%;
+  height: 70%;
   border-radius: 30px;
   padding: 20px;
   margin-bottom: 30px;
 }
 
 .slide-box-image {
-  width: auto;
-  height: auto;
+  width: 90%;
+  height: 70%;
+  object-fit: cover;
   margin-bottom: 20px;
+  border-radius: 30px;
 }
 
 .slide-box-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
@@ -603,7 +609,7 @@ li {
 }
 
 .swiper-pagination {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #fff;
   margin-bottom: 10px;
   display: flex;
@@ -619,10 +625,14 @@ li {
 }
 
 .usage-btn {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-left: auto;
   position: relative;
   top: -30px;
+}
+
+.view-btn img {
+width: 50px;
 }
 
 .view-btn:hover {
@@ -760,13 +770,15 @@ li {
 
 .run .run__car {
   bottom: 50px;
-  left: 150px;
+  left: 0px;
   position: absolute;
+    transition: transform 0.1s linear;
 }
 
 .run .run__car img {
   height: 60px;
   width: auto;
+  z-index: 100;
 }
 
 .bar {
@@ -975,10 +987,7 @@ li {
 
   #mainvisual .text {
     font-size: 1.2rem;
-  }
-
-  #mainvisual .text br {
-    display: block;
+    margin: 0 auto;
   }
 
   /* ガイド */
@@ -1287,7 +1296,7 @@ li {
 
 .p-pageTitle__en {
   position: absolute;
-  top: 20%;
+  top:140px;
   left: -3%;
   opacity: 0.8;
   width: 103%;
@@ -1738,6 +1747,7 @@ li {
 
   .p-pageTitle__en {
     font-size: 7rem;
+    top:180px;
   }
 
   .p-visual .p-copy {

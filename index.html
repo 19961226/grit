@@ -46,8 +46,8 @@
                   <a href="#feature" class="menu-btn__hover">機能紹介</a>
                 </li>
                 <li class="menu-btn">
-                  <a href="#usage" class="menu-btn__default">Usage Scene</a>
-                  <a href="#usage" class="menu-btn__hover">活用シーン</a>
+                  <a href="usage.html" class="menu-btn__default">Usage Scene</a>
+                  <a href="usage.html" class="menu-btn__hover">活用シーン</a>
                 </li>
               </ul>
               <div class="join-btn">
@@ -80,7 +80,7 @@
                   <a href="#feature">Feature</a>
                 </li>
                 <li class="menu-btn header-menu-btn">
-                  <a href="#usage">Usage Scene</a>
+                  <a href="usage.html">Usage Scene</a>
                 </li>
               </ul>
             </nav>
@@ -361,7 +361,7 @@
                     <div class="swiper-button-next"></div>
                   </div>
                   <div class="usage-btn">
-                    <p>View All</p>
+                    <a href="./usage.html" class="view-btn">View All</a>
                     <a href="./usage.html" class="view-btn"
                       ><img src="./img/Arrow right-circle.png" alt=""
                     /></a>
@@ -394,7 +394,9 @@
             <div class="inner">
               <h2 class="footer-title">Join now</h2>
               <p class="footer-subtitle">ーメタリーフを体験するー</p>
-              <a href="https://metalife.co.jp/" class="footer-btn">今すぐ始める</a>
+              <a href="https://metalife.co.jp/" class="footer-btn"
+                >今すぐ始める</a
+              >
               <ul>
                 <li class="menu-btn">
                   <a href="#about" class="menu-btn__default">About MetaLife</a>
@@ -427,7 +429,42 @@
         <div class="bar"></div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollContainer = document.getElementById("horizontal-scroll");
+        const car = document.querySelector(".run__car img");
 
+        if (!scrollContainer || !car) return;
+
+        let lastScrollLeft = scrollContainer.scrollLeft;
+        let isReversed = false;
+
+        scrollContainer.addEventListener("scroll", () => {
+          const maxScroll =
+            scrollContainer.scrollWidth - scrollContainer.clientWidth;
+          const currentScroll = scrollContainer.scrollLeft;
+
+          // スクロール量に応じてX座標を計算
+          const progress = currentScroll / maxScroll;
+          const maxMove = scrollContainer.clientWidth - 100; // 車の最大移動範囲
+          const translateX = progress * maxMove;
+          car.style.transform = `translateX(${translateX}px)`;
+
+          // 方向判定して画像切り替え
+          if (currentScroll > lastScrollLeft && isReversed) {
+            // 右スクロールに戻った → 通常画像に
+            car.src = "./img/drive_1.png";
+            isReversed = false;
+          } else if (currentScroll < lastScrollLeft && !isReversed) {
+            // 左スクロールになった → 逆向き画像に
+            car.src = "./img/drive_1_reverse.png";
+            isReversed = true;
+          }
+
+          lastScrollLeft = currentScroll;
+        });
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
